@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 
@@ -17,21 +18,28 @@ export default function Home({ data }) {
       <header className={styles.header}>
         <nav className={styles.nav}>
           {/* <img /> */}
-          <a href="/">Home</a>
-          <a href="/events">Events</a>
-          <a href="/about-us">About us</a>
+          <Link href="/" passHref>
+            <a>Home</a>
+          </Link>
+          <Link href="/events" passHref>
+            <a>Events</a>
+          </Link>
+          <Link href="/about-us" passHref>
+            <a>About us</a>
+          </Link>
         </nav>
       </header>
 
       <main className={`${styles.main} ${inter.className}`}>
-      {data.map((ev) => (
-        <a key={ev.id} href={`/events/${ev.id}`}>
-          
-          <Image width={200} height={200} src={ev.image} alt={ev.title} /> 
-          <h2>{ev.title}</h2>
-          <p>{ev.description}</p>
-        </a>
-      ))}
+        {data.map((ev) => (
+          <Link key={ev.id} href={`/events/${ev.id}`} passHref>
+            <a href={`/events/${ev.id}`}>
+              <Image width={300} height={300} src={ev.image} alt={ev.title} />
+              <h2>{ev.title}</h2>
+              <p>{ev.description}</p>
+            </a>
+          </Link>
+        ))}
         {/* <a href="/events/london">
           <img />
           <h2>Events in London</h2>
