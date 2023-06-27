@@ -19,13 +19,16 @@ export default function Home({ data }) {
         <nav className={styles.nav}>
           {/* <img /> */}
           <Link href="/" passHref>
-            <a>Home</a>
+            {/* <a>Home</a> */}
+            <p>Home</p>
           </Link>
           <Link href="/events" passHref>
-            <a>Events</a>
+            {/* <a>Events</a> */}
+            <p>Events</p>
           </Link>
           <Link href="/about-us" passHref>
-            <a>About us</a>
+            {/* <a>About us</a> */}
+            <p>About us</p>
           </Link>
         </nav>
       </header>
@@ -33,52 +36,13 @@ export default function Home({ data }) {
       <main className={`${styles.main} ${inter.className}`}>
         {data.map((ev) => (
           <Link key={ev.id} href={`/events/${ev.id}`} passHref>
-            <a href={`/events/${ev.id}`}>
+            {/* <a href={`/events/${ev.id}`}> */}
               <Image width={300} height={300} src={ev.image} alt={ev.title} />
               <h2>{ev.title}</h2>
               <p>{ev.description}</p>
-            </a>
+            {/* </a> */}
           </Link>
         ))}
-        {/* <a href="/events/london">
-          <img />
-          <h2>Events in London</h2>
-          <p>
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum."
-          </p>
-        </a>
-        <a href="/events/sanfran">
-          <img />
-          <h2>Events in San Francisco</h2>
-          <p>
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum."
-          </p>
-        </a>
-        <a href="">
-          <img />
-          <h2>Events in Barcelona</h2>
-          <p>
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum."
-          </p>
-        </a> */}
       </main>
       <footer className={styles.footer}>
         <p>©️2023 NextJS Projects by Eduardo Rocha</p>

@@ -1,18 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const EventsCatPage = ({ data }) => {
+const EventsCatPage = ({ data, pageName }) => {
   return (
     <div>
       <h1>Event in {pageName}</h1>
       <div>
         {data.map((ev) => (
           <Link key={ev.id} href={`/events/${ev.city}}/${ev.id}`} passHref >
-          <a >
+          <p>
             <Image width={300} height={300} src={ev.image} alt={ev.title} />
             <h2>{ev.title}</h2>
             <p>{ev.description}</p>
-          </a>
+          </p>
           </Link>
         ))}        ;
       </div>
